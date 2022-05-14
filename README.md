@@ -9,7 +9,11 @@ Documentation is still on progress. For now, you can fork this postman collectio
  `git clone https://github.com/senatroxx/laravel-be-topup.git`
  2. Cd into your project folder\
  `cd laravel-be-topup`
- 3. Copy env file\
+ 3. Install dependencies\
+ `composer install --no-dev`\
+ Or if you want continue developing this project\
+ `composer install`
+ 5. Copy env file\
  `cp .env.example .env`
  4. Setup your database, xendit, and digiflazz via .env file
  5. Make app key\
