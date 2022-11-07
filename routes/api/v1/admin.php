@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ProductBrandController;
 use App\Http\Controllers\Admin\ProductCategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
+use App\Http\Controllers\Admin\Profile\ProfileController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,9 @@ Route::prefix('admin')->group(function () {
     });
 
     Route::middleware(['auth:admin-api'])->group(function () {
+        Route::prefix('profile')->group(function () {
+            Route::post('change-password', [ProfileController::class, 'changePassword']);
+        });
 
         Route::prefix('users')
             ->controller(UserController::class)
